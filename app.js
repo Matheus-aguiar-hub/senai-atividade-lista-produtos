@@ -19,33 +19,42 @@ function chamarProdutos (produtos) {
     nome.textContent = produtos.nome
 
     const preco = document.createElement('h3')
-    preco.textContent = produtos.preco
+    preco.textContent = `Preço: R$ ${produtos.preco}`
 
     const descricao = document.createElement('span')
     descricao.textContent = produtos.descricao
 
     const classificacao = document.createElement('estrelas')
-    classificacao.textContent = produtos.classificacao 
+    classificacao.textContent = produtos.classificacao
 
-    card.append (item, categoria, nome, preco, descricao, classificacao)
+    card.append (categoria, item, nome, preco, descricao)
+
+    mudandoEstrelas(produtos.classificacao, card)
 
     return card
 }
 
-function mudandoEstrelas (estrelas, card) {
-    const item = document.createElement('img')
-    if(estrelas = 1){
-        item.src = './img/estrela1.png'
-    }else if(estrelas = 2){
-        item.src = `./img/estrela2.png`
-    }else if(estrelas = 3){
-        item.src = `./img/estrela3.png`
-    }else if(estrelas = 4){
-        item.src = `./img/estrela4.png`
-    }else if(estrelas = 5){
-        item.src = `./img/estrela5.png`
+function mudandoEstrelas (quantidade, card) {
+    const divEstrelas = document.createElement('div');
+    divEstrelas.className = 'estrelas';
+
+    // Definimos o símbolo da estrela cheia e vazia
+    const estrelaCheia = '★';
+    const estrelaVazia = '☆';
+
+    // Criamos uma string com 5 estrelas no total
+    // Ex: Se quantidade for 3, teremos 3 cheias e 2 vazias
+    let estrelasTexto = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= quantidade) {
+            estrelasTexto += estrelaCheia;
+        } else {
+            estrelasTexto += estrelaVazia;
+        }
     }
-    card.append (item)
+
+    divEstrelas.textContent = estrelasTexto;
+    card.append(divEstrelas);
 }
 
 const cards = produtos.map(chamarProdutos)

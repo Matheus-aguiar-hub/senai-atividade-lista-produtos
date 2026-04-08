@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: rgb(233, 233, 233);
     font-family: Arial, sans-serif;
 }
 
@@ -23,14 +23,16 @@ body {
 .card {
     background-color: #ffffff;
     border-radius: 12px;
-    border: 0.5px solid #9e9e9e;
+    border: 0.5px solid #51ff00;
     width: 300px;
-    height: 500px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(23, 255, 2, 0.08);
 }
 
 .card img {
@@ -38,7 +40,6 @@ body {
     background-color: #ffffff;
     height: 200px;
     object-fit: cover;
-    border-radius: 20% / 10%;
 }
 
 .card-info {
@@ -48,7 +49,7 @@ body {
 h1 {
     background-color: #000000;
     border-radius: 10% / 5%;
-    color: #ffffff;
+    color: #63e60b;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -67,7 +68,7 @@ h2 {
 h3 {
     font-size: 1rem;
     font-weight: bold;
-    color: #000000;
+    color: #005f10d5;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -85,4 +86,20 @@ span {
 .card-info span {
     font-size: 0.85rem;
     color: #666;
+}
+
+.estrelas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Formatação dos Símbolos */
+    color: #FFD700; 
+    font-size: 1.5rem; 
+    letter-spacing: 2px; 
+    
+    /* Espaçamento da div */
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
 }
